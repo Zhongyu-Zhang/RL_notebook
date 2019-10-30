@@ -33,13 +33,13 @@ $$
 
 ### 2.3  $10$ 臂测试平台
 
-![figure_2_1](H:\强化学习\share\unit02.assets\figure_2_1.png)
+![figure_2_1](https://github.com/Zhongyu-Zhang/RL_notebook/blob/master/unit02.assets/figure_2_1.png)
 
 <center><strong>图2.1</strong>  10 臂赌博机的问题平台</center>
 
  	如图 $2.1$ 显示的那样，动作的真实价值为 $q_*(a),a=1,...,10$。从一个均值为 0 方差为 1 的标准正态（高斯）分布中选择，这些分布显示为蓝色区域。当对应于该问题的学习方法在时刻 $t$ 选择 $A_t$ 时，实际收益 $R_t$ 则由一个均值为 $q_*(A_t)$ 方差为 1 的正态分布决定。 
 
-<img src="H:\强化学习\assets\figure_2_2.png" alt="figure_2_2" style="zoom: 80%;" />
+<img src="https://github.com/Zhongyu-Zhang/RL_notebook/blob/master/unit02.assets/figure_2_2.png" alt="figure_2_2" style="zoom: 80%;" />
 
 <center><strong>图2.2</strong>  “动作-价值”方法在 10 臂赌博机的问题平台上的平均表现</center>
 
@@ -94,7 +94,7 @@ $$
 
  	初始动作的价值同时也提供了一种简单的试探方法。还是从 $10$ 臂的测试平台来看，我们替换掉原先的初始值 $0$ ，将他们全部设为 $+5$ 。注意，如前所述，在这个问题中，$q_*(a)$ 是按照均值为 $0$ 方差为 $1$ 的正态分布选择的。因为 $+5$ 的初始值是一个过度乐观的估计。但是这种乐观的初始估计却会鼓励动作-价值方法去试探。因为无论哪一种动作被选择，收益都比开始的估计值要小；因此学习器会对得到的收益感到“失望”，从而转向另一个动作。这就导致所有动作在估计值收敛之前都被尝试了好几次。我们把这种鼓励试探的技术叫做**乐观初始价值**。需要注意的是，这个简单的技巧，在平稳问题中非常有效，但是不太适合非平稳过程，因为它试探的驱动力天生是暂时的。
 
-![](H:\强化学习\share\unit02.assets\figure_2_3.png)
+![](https://github.com/Zhongyu-Zhang/RL_notebook/blob/master/unit02.assets/figure_2_3.png)
 
 <center><strong>图2.3</strong> 乐观的初始“动作-价值”方法在 10 臂赌博机的问题平台上的运行结果</center>
 
@@ -108,7 +108,7 @@ A_t\overset{\cdot}{=}\underset{a}{argmax}[Q_t(a)+c\sqrt{\frac{ln t}{N_t(a)}}]\ta
 $$
  	在这里简述一下置信度上界（UCB）的动作选择思想，在这里我们把式子中的平方根项称为对 $a$ 动作值估计的不确定性的度量，参数 $c$ 决定了置信水平，接下来我们把这一项叫做<u>不确定性度量项</u>。不确定性度量项会随着 $N_t(a)$ 的增大而减小；也会随着 $t$ 的推移而增加。这对于一个动作来说，如果它随着时间的推移一直没有被选到，那么它的不确定性就会变得越来越大（由于是关于时间的对数函数，所以变化的幅度会越来越小，但是还是会无限的变大下去），这也就意味着它终将会被选到。总之，整体价值越大，被选到的次数就会越多，这满足了我们对算法的期望（根据动作的潜力来试探动作，而不是简单地选择贪心动作）。
 
-![](H:\强化学习\share\unit02.assets\figure_2_4.png)
+![](https://github.com/Zhongyu-Zhang/RL_notebook/blob/master/unit02.assets/figure_2_4.png)
 
 <center><strong>图2.4</strong>  UCB算法在 10 臂赌博机的问题平台上的平均表现</center>
 
@@ -131,7 +131,7 @@ H_{t+1}(A_t)&\overset{\cdot}{=}&H_{t}(A_t)+\alpha(R_t-\bar{R_t})(1-\pi_t(a))&els
 $$
  	注意，两个式子中的 $R_t$ 均是指选择 $A_t$ 动作时，所对应的即时收益。$\bar{R_t}$ 是指在时刻 $t$ 内所有收益的平均值。$\bar{R_t}$ 项作为基准，如果收益高于它，那么未来选择动作 $A_t$ 的概率就会增加，反之概率会降低。而未选择的动作变化与之相反。
 
-![](H:\强化学习\share\unit02.assets\figure_2_5.png)
+![](https://github.com/Zhongyu-Zhang/RL_notebook/blob/master/unit02.assets/figure_2_5.png)
 
 <center><strong>图2.5</strong>  含收益基准项与不含收益基准项的梯度赌博机算法在 10 臂赌博机的问题平台上的平均表现</center>
 
@@ -149,7 +149,7 @@ $$
 
  	本章的提到的算法虽然简单，但是在我们看来，它们已经被公认为最先进的技术，我们接下来提出的解决完整的强化学习问题的学习方法，它们也都部分的使用了本章的处理方法。
 
-![](H:\强化学习\share\unit02.assets\figure_2_6.png)
+![](https://github.com/Zhongyu-Zhang/RL_notebook/blob/master/unit02.assets/figure_2_6.png)
 
 <center><strong>图2.6</strong>  本章中不同赌博机算法的参数调整研究</center>
 
